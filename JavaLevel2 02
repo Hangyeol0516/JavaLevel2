@@ -1,0 +1,21 @@
+package main;
+
+public class variable {
+
+    public static void main(String[] args) {
+        byte 정수바이트 = 127; /* 128 까지 */
+        char 정수차 = 90; /* 유니코드로 표현 */
+        System.out.print(정수차);
+        short 정수쇼츠;
+        int 정수인트;
+        long 정수롱;
+
+        float 실수플로트;
+        double 실수더블;
+
+        boolean 논리_볼린;
+
+
+    }
+
+}
