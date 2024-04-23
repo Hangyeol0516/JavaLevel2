@@ -1,0 +1,54 @@
+package Main;
+
+public class main {
+
+    public static void main(String[] args) {
+        //컴터는 뺄셈을 하지 못하여 더하기로 바꾸어 (보수로 바꾸어) 계산한다.
+
+        int 이진수 = 0B01010010101001;
+        System.out.println(이진수);
+
+        int 팔진수 = 0770405;
+        System.out.println(팔진수);
+
+        int 십육진수 = 0xA0FB;
+        System.out.println(십육진수);
+
+        int 이진수2 = 0B01010010101001;
+        System.out.println(이진수2);
+        int 팔진수2 = 0770405;
+        System.out.println(팔진수2);
+        int 십육진수2 = 0xA0FB;
+        System.out.println(십육진수2);
+
+        long 롱 = 18;//롱이라는 변수 ling형, 18 이라는 숫자는 int형
+        long 롱2 = 18181818181818l;
+
+        float 플로트 = 18.2f;//플로트라는 변수는 float형인데 18.2는 doucle형(실행 안됌)
+
+        //&& = and, || = or
+        // \n 줄바꿈, \t tab 
+
+        int num = 18;
+
+        int [] arr = new int[10];
+
+        arr[0] = num % 2;
+        num = num / 2;//9가 남음
+        arr[1] = num % 2;
+        num = num / 2;//4가 남음
+        arr[2] = num % 2;
+        num = num / 2;//2가 남음
+        arr[3] = num % 2;
+        num = num / 2;//1이 남음
+        arr[4] = num % 2;
+        num = num / 2;
+
+        System.out.println(arr[4]);
+        System.out.println(arr[3]);
+        System.out.println(arr[2]);
+        System.out.println(arr[1]);
+        System.out.println(arr[0]);
+    }
+
+}
