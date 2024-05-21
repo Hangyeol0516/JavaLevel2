@@ -1,0 +1,32 @@
+package Main;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Hero h1; 
+		// h1 이라는 참조변수를 생성한다.
+		h1 = new Hero();
+		// h1에서 Hero 생성자로 만들어낸 인스턴스의 주소를 저장한다.
+		
+		System.out.println("영웅 이름: " + h1.get이름());
+		System.out.println("영웅 공격력: " + h1.get공격력());
+		System.out.println("영웅 체력: " + h1.get체력());
+		System.out.println("영웅 마나: " + h1.get마나());
+		
+		Hero h2 = new Hero("결결");
+		Hero h3 = new Hero("결결결", 99);
+		
+		h1.공격(h2);
+		h1.몸통박치기(h2);
+		
+		
+		
+//		h1.이름 = "결";
+//		h1.set이름("결");
+	
+//		System.out.println(h1.이름());
+//		System.out.println(h1.get이름());
+		
+	}
+
+}
