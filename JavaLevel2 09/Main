@@ -1,0 +1,58 @@
+package main;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		Random rd = new Random();
+		Player p1;
+		
+		System.out.println("(1)딜러 (2)탱커 (3)법사");
+		int 직업_선택 = scan.nextInt();
+		
+		if (직업_선택 == 1) {
+			p1 = new Player("전사", 100, 0, 30);
+		} else {
+			p1 = new Player("법사", 50, 30, 10);
+		}
+
+		Monster m1 = new Monster("성지현", 100, 20);
+		System.out.println(m1.get이름() + "을 마주쳤다.");
+		
+		while (true) {
+			System.out.printf("%s 체력 : %d 마나 : %d", p1.get이름(), p1.get체력(), p1.get마나());
+			System.out.printf("// %s 체력 : %d\n", m1.get이름(), m1.get체력());
+			System.out.println("(1)공격 (2)방어 (3)파이어볼");
+			int 선택지 = scan.nextInt();
+			
+			if (선택지 == 1) {
+				p1.공격(m1);
+			} else if (선택지 == 2) {
+				p1.명상();
+			} else {
+				p1.스킬공격(m1);
+			}
+			
+			int 몬스터행동 = rd.nextInt(10);
+			if (몬스터행동 < 4) {
+				m1.공격(p1);
+			} else {
+				m1.명상();
+			}
+			
+			if (p1.get체력() <= 0) {
+				System.out.println(p1.get이름() + "가 죽었습니다.");
+				break;
+			} else if (m1.get체력() <= 0) {
+				System.out.println(p1.get이름() + "이 " + m1.get이름() + "을 물리쳤습니다.");
+				break;
+			}
+		}
+		
+	}
+
+}
