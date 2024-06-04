@@ -1,0 +1,42 @@
+package main;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Hero hero = new Hero("히어로");
+		Hero enemy = new Hero("탈주닌자", 10, 80, 20);
+		Scanner scan = new Scanner(System.in);
+		Random rd = new Random();
+		int count = 0;
+		
+		while (true) {
+			count ++;
+			System.out.printf("\n%d턴, 현재 적의 체력:%d", count, enemy.get체력());
+			System.out.println("아무키나 누르시오.");
+			scan.next();
+			
+			// 공격 : 50, 크리공격: 20%, 명상 : 30%
+			int 랜덤 = rd.nextInt(10);
+			
+			if (랜덤 < 5) {
+				System.out.println("");
+				hero.공격(enemy);
+			} else if (랜덤 < 7) {
+				hero.크리공격(enemy);
+			} else {
+				hero.명상();
+			}
+			
+			if(enemy.get체력() <= 0) {
+				System.out.printf("\n%d턴 만에 승리하셨습니다.", count);
+				break;
+			}
+		}
+	
+	}
+
+}
